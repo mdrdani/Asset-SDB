@@ -1,0 +1,65 @@
+@layout('layout/master')
+
+@section('body')
+ <div class="row">
+    <div class="col-md-12">
+      @if(flashMessage('notification'))
+      <div class="alert alert-success">{{ flashMessage('notification') }}</div>
+      @endif
+      <div class="card">
+        <div class="card-header">
+          DATA DVR
+        </div>
+        <div class="card-body">
+          <a href="{{ route('dvr.create') }}" class="btn btn-success btn-md" style="margin-bottom: 10px">Tambah Data</a>
+          <table class="table table-hovered table-striped table-bordered" id="myTable">
+            <thead>
+            <tr>
+              <td>Tanggal</td>
+              <td>Keterangan</td>
+              <td>Serial Number</td>
+              <td>Harga</td>
+              <td>Aksi</td>
+            </tr>
+            </thead>
+            <tbody>
+            @each(dvr in dvrs)
+            <tr>
+              <td>  {{ dvr.created_at }} </td>
+              <td> {{ dvr.keterangan }} </td>
+              <td> {{ dvr.serialnumber }} </td>
+              <td> {{dvr.harga }} </td>
+              <td class="text-center">
+                <a href="#" class="btn btn-sm btn-warning">View</a>
+                <a href="{{route('dvr.edit', {id: dvr.id})}}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{{route('dvr.delete', {id: dvr.id})}}" class="btn btn-sm btn-danger">Hapus</a>
+              </td>
+            </tr>
+            @endeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  @endsection
+
+  @section('script')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="http://cdn.datatables.net/plug-ins/1.10.15/dataRender/datetime.js"></script>
+  <script>
+  $(document).ready( function () {
+    $('#myTable').DataTable({
+        responsive : true,
+        columnDefs: [
+          {targets: [3], render: $.fn.dataTable.render.number('.', ',', 0 )},
+          {targets: [0], render: function(data) {
+            return moment(data).locale("ID").format('LL');
+          },
+          
+        },
+        ]
+    });
+  } );
+</script>
+  @endsection

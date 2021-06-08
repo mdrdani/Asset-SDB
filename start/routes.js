@@ -33,3 +33,11 @@ Route.post("/ups/store", "UpController.store").as("ups.store");
 Route.get("/ups/edit/:id", "UpController.edit").as("ups.edit");
 Route.post("/ups/update/:id", "UpController.update").as("ups.update");
 Route.get("/ups/delete/:id", "UpController.delete").as("ups.delete");
+
+// CRUD DVR
+Route.get("/dvr", "DvrController.index").as("dvr.index");
+Route.get("/dvr/create", "DvrController.create").as("dvr.create");
+Route.post("/dvr/store", "DvrController.store").as("dvr.store");
+Route.get("/dvr/edit/:id", "DvrController.edit").as("dvr.edit");
+Route.post("/dvr/update/:id", "DvrController.update").as("dvr.update");
+Route.get("/dvr/delete/:id", "DvrController.delete").as("dvr.delete");
