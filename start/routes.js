@@ -18,3 +18,5 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 Route.get('/cctv', 'CctvController.index').as('cctv.index')
+Route.get('/cctv/create', 'CctvController.create').as('cctv.create')
+Route.post('/cctv/store', 'CctvController.store').as('cctv.store')
