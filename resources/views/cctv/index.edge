@@ -46,7 +46,7 @@
               <td> {{ cctv.harga }} </td>
               <td> {{ cctv.kendala }} </td>
               <td class="text-center">
-                <a href="#" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{{route('cctv.edit', {id: cctv.id})}}" class="btn btn-sm btn-primary">Edit</a>
                 <a href="#" class="btn btn-sm btn-danger">Hapus</a>
               </td>
             </tr>
