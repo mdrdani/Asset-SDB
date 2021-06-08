@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
-  <title>Data CCTV</title>
+  <title>Data UPS</title>
 </head>
 <body>
 
@@ -40,7 +40,7 @@
       @endif
       <div class="card">
         <div class="card-header">
-          DATA CCTV
+          DATA UPS
         </div>
         <div class="card-body">
           <a href="{{ route('cctv.create') }}" class="btn btn-success btn-md" style="margin-bottom: 10px">Tambah Data</a>
@@ -58,18 +58,18 @@
             </tr>
             </thead>
             <tbody>
-            @each(cctv in cctvs)
+            @each(ups in upsss)
             <tr>
-              <td>  {{ cctv.tanggal }} </td>
-              <td> {{ cctv.keterangan }} </td>
-              <td> {{ cctv.serialnumber }} </td>
-              <td> {{ cctv.bagianunit }} </td>
-              <td> {{ cctv.quantity }} </td>
-              <td> {{ cctv.harga }} </td>
-              <td> {{ cctv.kendala }} </td>
+              <td>  {{ ups.tanggal }} </td>
+              <td> {{ ups.keterangan }} </td>
+              <td> {{ ups.serialnumber }} </td>
+              <td> {{ ups.bagianunit }} </td>
+              <td> {{ ups.quantity }} </td>
+              <td> {{ ups.harga }} </td>
+              <td> {{ ups.kendala }} </td>
               <td class="text-center">
-                <a href="{{route('cctv.edit', {id: cctv.id})}}" class="btn btn-sm btn-primary">Edit</a>
-                <a href="{{route('cctv.delete', {id: cctv.id})}}" class="btn btn-sm btn-danger">Hapus</a>
+                <a href="{{route('ups.edit', {id: ups.id})}}" class="btn btn-sm btn-primary">Edit</a>
+                <a href="{{route('ups.delete', {id: ups.id})}}" class="btn btn-sm btn-danger">Hapus</a>
               </td>
             </tr>
             @endeach
