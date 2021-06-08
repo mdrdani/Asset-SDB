@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,18 +14,22 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use("Route");
 
-Route.on('/').render('welcome')
+Route.on("/").render("welcome");
 
 // CRUD CCTV
-Route.get('/cctv', 'CctvController.index').as('cctv.index')
-Route.get('/cctv/create', 'CctvController.create').as('cctv.create')
-Route.post('/cctv/store', 'CctvController.store').as('cctv.store')
-Route.get('/cctv/edit/:id', 'CctvController.edit').as('cctv.edit')
-Route.post('/cctv/update/:id', 'CctvController.update').as('cctv.update')
-Route.get('/cctv/delete/:id', 'CctvController.delete').as('cctv.delete')
+Route.get("/cctv", "CctvController.index").as("cctv.index");
+Route.get("/cctv/create", "CctvController.create").as("cctv.create");
+Route.post("/cctv/store", "CctvController.store").as("cctv.store");
+Route.get("/cctv/edit/:id", "CctvController.edit").as("cctv.edit");
+Route.post("/cctv/update/:id", "CctvController.update").as("cctv.update");
+Route.get("/cctv/delete/:id", "CctvController.delete").as("cctv.delete");
 
 // CRUD UPS
-Route.get('/ups', 'UpController.index').as('ups.index')
-
+Route.get("/ups", "UpController.index").as("ups.index");
+Route.get("/ups/create", "UpController.create").as("ups.create");
+Route.post("/ups/store", "UpController.store").as("ups.store");
+Route.get("/ups/edit/:id", "UpController.edit").as("ups.edit");
+Route.post("/ups/update/:id", "UpController.update").as("ups.update");
+Route.get("/ups/delete/:id", "UpController.delete").as("ups.delete");

@@ -43,7 +43,7 @@
           DATA UPS
         </div>
         <div class="card-body">
-          <a href="{{ route('cctv.create') }}" class="btn btn-success btn-md" style="margin-bottom: 10px">Tambah Data</a>
+          <a href="{{ route('ups.create') }}" class="btn btn-success btn-md" style="margin-bottom: 10px">Tambah Data</a>
           <table class="table table-hovered table-striped table-bordered" id="myTable">
             <thead>
             <tr>
@@ -58,7 +58,7 @@
             </tr>
             </thead>
             <tbody>
-            @each(ups in upsss)
+            @each(ups in upss)
             <tr>
               <td>  {{ ups.tanggal }} </td>
               <td> {{ ups.keterangan }} </td>
