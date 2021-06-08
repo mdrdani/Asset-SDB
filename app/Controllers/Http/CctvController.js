@@ -55,6 +55,14 @@ class CctvController {
         return response.route('cctv.index')
     }
 
+    async delete({ request, response, view, params, session}) {
+        const id = params.id
+        const cctv = await Cctv.find(id)
+        await cctv.delete()
+
+        session.flash({ notification: 'Data Berhasil Di Hapus'})
+        return response.route('cctv.index')
+    }
 
 }
 

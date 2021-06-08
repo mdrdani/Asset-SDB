@@ -24,4 +24,5 @@ Route.get('/cctv/create', 'CctvController.create').as('cctv.create')
 Route.post('/cctv/store', 'CctvController.store').as('cctv.store')
 Route.get('/cctv/edit/:id', 'CctvController.edit').as('cctv.edit')
 Route.post('/cctv/update/:id', 'CctvController.update').as('cctv.update')
+Route.get('/cctv/delete/:id', 'CctvController.delete').as('cctv.delete')
 

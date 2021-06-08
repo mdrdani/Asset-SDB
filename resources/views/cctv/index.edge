@@ -47,7 +47,7 @@
               <td> {{ cctv.kendala }} </td>
               <td class="text-center">
                 <a href="{{route('cctv.edit', {id: cctv.id})}}" class="btn btn-sm btn-primary">Edit</a>
-                <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                <a href="{{route('cctv.delete', {id: cctv.id})}}" class="btn btn-sm btn-danger">Hapus</a>
               </td>
             </tr>
             @endeach
