@@ -19,10 +19,6 @@
           <form action="{{ route('cctv.update', { id: cctv.id }) }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-              <label>Tanggal</label>
-              <input class="form-control" value="{{ cctv.tanggal }}" type="date" name="tanggal">
-            </div>
-            <div class="form-group">
                 <label>Keterangan</label>
                 <input class="form-control" type="text" value="{{ cctv.keterangan}}" name="keterangan" placeholder="Input Keterangan Data">
               </div>

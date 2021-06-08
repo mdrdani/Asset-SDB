@@ -42,7 +42,6 @@ class CctvController {
         const id = params.id
         const cctv = await Cctv.find(id)
 
-        cctv.tanggal = request.input('tanggal')
         cctv.keterangan = request.input('keterangan')
         cctv.serialnumber = request.input('serialnumber')
         cctv.bagianunit = request.input('bagianunit')
