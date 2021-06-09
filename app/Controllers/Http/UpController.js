@@ -24,12 +24,12 @@ class UpController {
     const ups = new UPS();
 
     ups.tanggal = request.input("tanggal");
-    ups.keterangan = request.input("keterangan");
+    ups.namabarang = request.input("namabarang");
     ups.serialnumber = request.input("serialnumber");
     ups.bagianunit = request.input("bagianunit");
     ups.quantity = request.input("quantity");
     ups.harga = request.input("harga");
-    ups.kendala = request.input("kendala");
+    ups.keterangan = request.input("keterangan");
     await ups.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });
@@ -47,12 +47,12 @@ class UpController {
     const id = params.id;
     const ups = await UPS.find(id);
 
-    ups.keterangan = request.input("keterangan");
+    ups.namabarang = request.input("namabarang");
     ups.serialnumber = request.input("serialnumber");
     ups.bagianunit = request.input("bagianunit");
     ups.quantity = request.input("quantity");
     ups.harga = request.input("harga");
-    ups.kendala = request.input("kendala");
+    ups.keterangan = request.input("keterangan");
     await ups.save();
 
     session.flash({ notification: "Data Berhasil Di Update" });

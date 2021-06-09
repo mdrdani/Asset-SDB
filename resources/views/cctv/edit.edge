@@ -19,8 +19,8 @@
           <form action="{{ route('cctv.update', { id: cctv.id }) }}" method="POST">
             {{ csrfField() }}
             <div class="form-group">
-                <label>Keterangan</label>
-                <input class="form-control" type="text" value="{{ cctv.keterangan}}" name="keterangan" placeholder="Input Keterangan Data">
+                <label>Nama Barang</label>
+                <input class="form-control" type="text" value="{{ cctv.namabarang}}" name="namabarang" placeholder="Input Nama Barang">
               </div>
               <div class="form-group">
                 <label>Serial Number</label>
@@ -48,8 +48,8 @@
                 <input class="form-control" value="{{ cctv.harga}}" type="number" name="harga" placeholder="Input Harga">
               </div>
             <div class="form-group">
-              <label>Kendala</label>
-              <textarea class="form-control" name="kendala"rows="5" placeholder="Masukkan Kendala">{{ cctv.kendala}}</textarea>
+              <label>Keterangan</label>
+              <textarea class="form-control" name="keterangan"rows="5" placeholder="Masukkan Kendala">{{ cctv.keterangan}}</textarea>
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-md btn-success">Simpan</button>

@@ -24,12 +24,12 @@ class DvrController {
     const dvr = new DVR();
 
     dvr.tanggal = request.input("tanggal");
-    dvr.keterangan = request.input("keterangan");
+    dvr.namabarang = request.input("namabarang");
     dvr.serialnumber = request.input("serialnumber");
     dvr.bagianunit = request.input("bagianunit");
     dvr.quantity = request.input("quantity");
     dvr.harga = request.input("harga");
-    dvr.kendala = request.input("kendala");
+    dvr.keterangan = request.input("keterangan");
     await dvr.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });
@@ -47,12 +47,12 @@ class DvrController {
     const id = params.id;
     const dvr = await DVR.find(id);
 
-    dvr.keterangan = request.input("keterangan");
+    dvr.namabarang = request.input("namabarang");
     dvr.serialnumber = request.input("serialnumber");
     dvr.bagianunit = request.input("bagianunit");
     dvr.quantity = request.input("quantity");
     dvr.harga = request.input("harga");
-    dvr.kendala = request.input("kendala");
+    dvr.keterangan = request.input("keterangan");
     await dvr.save();
 
     session.flash({ notification: "Data Berhasil Di Update" });

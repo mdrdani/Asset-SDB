@@ -24,12 +24,12 @@ class CctvController {
     const cctv = new Cctv();
 
     cctv.tanggal = request.input("tanggal");
-    cctv.keterangan = request.input("keterangan");
+    cctv.namabarang = request.input("namabarang");
     cctv.serialnumber = request.input("serialnumber");
     cctv.bagianunit = request.input("bagianunit");
     cctv.quantity = request.input("quantity");
     cctv.harga = request.input("harga");
-    cctv.kendala = request.input("kendala");
+    cctv.keterangan = request.input("keterangan");
     await cctv.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });
@@ -47,12 +47,12 @@ class CctvController {
     const id = params.id;
     const cctv = await Cctv.find(id);
 
-    cctv.keterangan = request.input("keterangan");
+    cctv.namabarang = request.input("namabarang");
     cctv.serialnumber = request.input("serialnumber");
     cctv.bagianunit = request.input("bagianunit");
     cctv.quantity = request.input("quantity");
     cctv.harga = request.input("harga");
-    cctv.kendala = request.input("kendala");
+    cctv.keterangan = request.input("keterangan");
     await cctv.save();
 
     session.flash({ notification: "Data Berhasil Di Update" });

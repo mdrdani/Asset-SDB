@@ -8,12 +8,12 @@ class AssetDvrSchema extends Schema {
     this.create("asset_dvrs", (table) => {
       table.increments();
       table.date("tanggal");
-      table.string("keterangan");
+      table.string("namabarang");
       table.string("serialnumber");
       table.string("bagianunit");
       table.integer("quantity");
       table.bigInteger("harga");
-      table.text("kendala").nullable();
+      table.text("keterangan").nullable();
       table.string("gambar").nullable();
       table.timestamps();
     });
