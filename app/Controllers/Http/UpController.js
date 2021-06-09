@@ -44,6 +44,12 @@ class UpController {
       name: ups.gambar,
     });
 
+    if (!upload_image.moved()) {
+      session.withErrors([
+        { field: "gambar", message: upload_image.error().message },
+      ]);
+    }
+
     await ups.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });
