@@ -20,6 +20,7 @@ Route.on("/").render("welcome");
 
 // CRUD CCTV
 Route.get("/cctv", "CctvController.index").as("cctv.index");
+Route.get("/cctv/show/:id", "CctvController.show").as("cctv.show");
 Route.get("/cctv/create", "CctvController.create").as("cctv.create");
 Route.post("/cctv/store", "CctvController.store").as("cctv.store");
 Route.get("/cctv/edit/:id", "CctvController.edit").as("cctv.edit");

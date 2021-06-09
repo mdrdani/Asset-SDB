@@ -1,0 +1,13 @@
+@layout('layout/master')
+
+@section('body')
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{cctv.keterangan}}</h1>
+    <p class="lead">Kendala : {{cctv.kendala}}</p>
+    <p class="lead">Serial Number : <b>{{cctv.serialnumber}}</b></p>
+    <p class="lead">Bagian Unit : {{cctv.bagianunit}}</p>
+    <p class="lead">Harga : {{cctv.harga}} || Jumlah : {{cctv.quantity}} buah</p>
+  </div>
+</div>
+@endsection
