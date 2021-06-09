@@ -21,18 +21,22 @@
             <div class="form-group">
               <label>Tanggal</label>
               <input class="form-control" type="date" name="tanggal">
+              {{ elIf('<span class="text-danger">$self</span>', getErrorFor('tanggal'), hasErrorFor('tanggal') ) }}
             </div>
             <div class="form-group">
                 <label>Nama Barang</label>
                 <input class="form-control" type="text" name="namabarang" placeholder="Input Nama Barang">
+                {{ elIf('<span class="text-danger">$self</span>', getErrorFor('namabarang'), hasErrorFor('namabarang') ) }}
               </div>
               <div class="form-group">
                 <label>Serial Number</label>
                 <input class="form-control" type="text" name="serialnumber" placeholder="Input Serial Number">
+                {{ elIf('<span class="text-danger">$self</span>', getErrorFor('serialnumber'), hasErrorFor('serialnumber') ) }}
               </div>
               <div class="form-group">
                 <label>Foto/Gambar</label>
                 <input class="form-control" type="file" name="gambar">
+                {{ elIf('<span class="text-danger">$self</span>', getErrorFor('gambar'), hasErrorFor('gambar') ) }}
               </div>
               <div class="form-group">
                 <label>Bagian Unit</label>
@@ -49,14 +53,17 @@
               <div class="form-group">
                 <label>Quantity</label>
                 <input class="form-control" type="number" name="quantity" placeholder="Input Quantity">
+                {{ elIf('<span class="text-danger">$self</span>', getErrorFor('quantity'), hasErrorFor('quantity') ) }}
               </div>
               <div class="form-group">
                 <label>Harga</label>
                 <input class="form-control" type="number" name="harga" placeholder="Input Harga">
+                 {{ elIf('<span class="text-danger">$self</span>', getErrorFor('harga'), hasErrorFor('harga') ) }}
               </div>
             <div class="form-group">
               <label>Keterangan</label>
               <textarea class="form-control" name="keterangan"rows="5" placeholder="Masukkan Keterangan"></textarea>
+              {{ elIf('<span class="text-danger">$self</span>', getErrorFor('keterangan'), hasErrorFor('keterangan') ) }}
             </div>
             <div class="form-group">
               <button type="submit" class="btn btn-md btn-success">Simpan</button>
