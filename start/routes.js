@@ -38,6 +38,7 @@ Route.get("/ups/delete/:id", "UpController.delete").as("ups.delete");
 
 // CRUD DVR
 Route.get("/dvr", "DvrController.index").as("dvr.index");
+Route.get("/dvr/show/:id", "DvrController.show").as("dvr.show");
 Route.get("/dvr/create", "DvrController.create").as("dvr.create");
 Route.post("/dvr/store", "DvrController.store").as("dvr.store");
 Route.get("/dvr/edit/:id", "DvrController.edit").as("dvr.edit");

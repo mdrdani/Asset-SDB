@@ -9,6 +9,13 @@ class DvrController {
     return view.render("dvr.index", { dvrs: dvrs.rows });
   }
 
+  async show({ request, response, view, params }) {
+    const id = params.id;
+    const dvr = await DVR.find(id);
+
+    return view.render("dvr.show", { dvr: dvr });
+  }
+
   create({ request, response, view }) {
     return view.render("dvr.create");
   }

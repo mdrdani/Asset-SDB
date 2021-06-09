@@ -16,7 +16,7 @@
             <thead>
             <tr>
               <td>Tanggal</td>
-              <td>Keterangan</td>
+              <td>Nama Barang</td>
               <td>Serial Number</td>
               <td>Harga</td>
               <td>Aksi</td>
@@ -30,7 +30,7 @@
               <td> {{ dvr.serialnumber }} </td>
               <td> {{dvr.harga }} </td>
               <td class="text-center">
-                <a href="#" class="btn btn-sm btn-warning">View</a>
+                <a href="{{route('dvr.show', {id: dvr.id})}}" class="btn btn-sm btn-warning">View</a>
                 <a href="{{route('dvr.edit', {id: dvr.id})}}" class="btn btn-sm btn-primary">Edit</a>
                 <a href="{{route('dvr.delete', {id: dvr.id})}}" class="btn btn-sm btn-danger">Hapus</a>
               </td>
