@@ -9,6 +9,13 @@ class UpController {
     return view.render("ups.index", { upss: upss.rows });
   }
 
+  async show({ request, response, view, params }) {
+    const id = params.id;
+    const ups = await UPS.find(id);
+
+    return view.render("ups.show", { ups: ups });
+  }
+
   create({ request, response, view }) {
     return view.render("ups.create");
   }

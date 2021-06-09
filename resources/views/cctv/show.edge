@@ -7,7 +7,12 @@
     <p class="lead">Kendala : {{cctv.kendala}}</p>
     <p class="lead">Serial Number : <b>{{cctv.serialnumber}}</b></p>
     <p class="lead">Bagian Unit : {{cctv.bagianunit}}</p>
-    <p class="lead">Harga : {{cctv.harga}} || Jumlah : {{cctv.quantity}} buah</p>
+    <p class="lead">Harga : {{cctv.harga}}</p>
+    <a href="{{route('cctv.index')}}" class="btn btn-sm btn-primary">Kembali</a>
   </div>
 </div>
+@endsection
+
+@section('script')
+  
 @endsection

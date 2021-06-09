@@ -30,7 +30,7 @@
               <td> {{ ups.serialnumber }} </td>
               <td> {{ups.harga }} </td>
               <td class="text-center">
-                <a href="#" class="btn btn-sm btn-warning">View</a>
+                <a href="{{route('ups.show', {id: ups.id})}}" class="btn btn-sm btn-warning">View</a>
                 <a href="{{route('ups.edit', {id: ups.id})}}" class="btn btn-sm btn-primary">Edit</a>
                 <a href="{{route('ups.delete', {id: ups.id})}}" class="btn btn-sm btn-danger">Hapus</a>
               </td>

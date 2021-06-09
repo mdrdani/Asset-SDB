@@ -29,6 +29,7 @@ Route.get("/cctv/delete/:id", "CctvController.delete").as("cctv.delete");
 
 // CRUD UPS
 Route.get("/ups", "UpController.index").as("ups.index");
+Route.get("/ups/show/:id", "UpController.show").as("ups.show");
 Route.get("/ups/create", "UpController.create").as("ups.create");
 Route.post("/ups/store", "UpController.store").as("ups.store");
 Route.get("/ups/edit/:id", "UpController.edit").as("ups.edit");

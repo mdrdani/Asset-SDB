@@ -30,7 +30,7 @@
               <td> {{ cctv.serialnumber }} </td>
               <td> {{ cctv.harga }} </td>
               <td class="text-center">
-                <a href="{{ route('cctv.show', {id: cctv.id})}}" target="_blank" class="btn btn-sm btn-warning">View</a>
+                <a href="{{ route('cctv.show', {id: cctv.id})}}" class="btn btn-sm btn-warning">View</a>
                 <a href="{{route('cctv.edit', {id: cctv.id})}}" class="btn btn-sm btn-primary">Edit</a>
                 <a href="{{route('cctv.delete', {id: cctv.id})}}" class="btn btn-sm btn-danger">Hapus</a>
               </td>
