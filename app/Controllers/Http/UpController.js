@@ -1,6 +1,7 @@
 "use strict";
 
 const UPS = use("App/Models/AssetUp");
+const Helpers = use("Helpers");
 
 class UpController {
   async index({ request, response, view }) {
@@ -30,6 +31,19 @@ class UpController {
     ups.quantity = request.input("quantity");
     ups.harga = request.input("harga");
     ups.keterangan = request.input("keterangan");
+
+    const upload_image = request.file("gambar", {
+      types: ["image"],
+      size: "2mb",
+      extnames: ["jpg", "jpeg", "png"],
+    });
+
+    ups.gambar = new Date().getTime() + "." + upload_image.subtype;
+
+    await upload_image.move(Helpers.publicPath("uploads/image/ups"), {
+      name: ups.gambar,
+    });
+
     await ups.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });

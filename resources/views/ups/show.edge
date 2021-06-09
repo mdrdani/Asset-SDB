@@ -3,6 +3,7 @@
 @section('body')
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <img class="img-fluid" src="{{ assetsUrl('uploads/image/ups/' + ups.gambar) }}" width="35%" alt="">
     <h1 class="display-4">{{ups.namabarang}}</h1>
     <p class="lead">Keterangan : {{ups.keterangan}}</p>
     <p class="lead">Serial Number : <b>{{ups.serialnumber}}</b></p>
