@@ -1,6 +1,7 @@
 "use strict";
 
 const Cctv = use("App/Models/AssetCctv");
+const Helpers = use("Helpers");
 
 class CctvController {
   async index({ request, response, view }) {
@@ -30,6 +31,19 @@ class CctvController {
     cctv.quantity = request.input("quantity");
     cctv.harga = request.input("harga");
     cctv.keterangan = request.input("keterangan");
+
+    const upload_image = request.file("gambar", {
+      types: ["image"],
+      size: "2mb",
+      extnames: ["jpg", "jpeg", "png"],
+    });
+
+    cctv.gambar = new Date().getTime() + "." + upload_image.subtype;
+
+    await upload_image.move(Helpers.publicPath("uploads/image"), {
+      name: cctv.gambar,
+    });
+
     await cctv.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });
