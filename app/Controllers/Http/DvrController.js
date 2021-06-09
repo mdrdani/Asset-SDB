@@ -1,6 +1,7 @@
 "use strict";
 
 const DVR = use("App/Models/AssetDvr");
+const Helpers = use("Helpers");
 
 class DvrController {
   async index({ request, response, view }) {
@@ -30,6 +31,19 @@ class DvrController {
     dvr.quantity = request.input("quantity");
     dvr.harga = request.input("harga");
     dvr.keterangan = request.input("keterangan");
+
+    const upload_image = request.file("gambar", {
+      types: ["image"],
+      size: "2mb",
+      extnames: ["jpg", "jpeg", "png"],
+    });
+
+    dvr.gambar = new Date().getTime() + "." + upload_image.subtype;
+
+    await upload_image.move(Helpers.publicPath("uploads/image/dvr"), {
+      name: dvr.gambar,
+    });
+
     await dvr.save();
 
     session.flash({ notification: "Data Berhasil Di simpan" });

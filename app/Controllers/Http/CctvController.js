@@ -40,7 +40,7 @@ class CctvController {
 
     cctv.gambar = new Date().getTime() + "." + upload_image.subtype;
 
-    await upload_image.move(Helpers.publicPath("uploads/image"), {
+    await upload_image.move(Helpers.publicPath("uploads/image/cctv"), {
       name: cctv.gambar,
     });
 

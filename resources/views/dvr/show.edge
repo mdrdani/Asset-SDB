@@ -3,6 +3,7 @@
 @section('body')
   <div class="jumbotron jumbotron-fluid">
   <div class="container">
+    <img class="img-fluid" src="{{ assetsUrl('uploads/image/dvr/' + dvr.gambar) }}" width="35%" alt="">
     <h1 class="display-4">{{dvr.namabarang}}</h1>
     <p class="lead">Keterangan : {{dvr.keterangan}}</p>
     <p class="lead">Serial Number : <b>{{dvr.serialnumber}}</b></p>
