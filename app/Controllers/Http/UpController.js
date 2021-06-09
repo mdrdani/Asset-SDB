@@ -2,6 +2,7 @@
 
 const UPS = use("App/Models/AssetUp");
 const Helpers = use("Helpers");
+const { validate } = use("Validator");
 
 class UpController {
   async index({ request, response, view }) {
@@ -22,6 +23,20 @@ class UpController {
   }
 
   async store({ request, response, view, session }) {
+    const validation = await validate(request.all(), {
+      tanggal: "required",
+      namabarang: "required|min:2",
+      serialnumber: "string",
+      quantity: "required|integer",
+      harga: "required|integer",
+      keterangan: "required|min:5",
+    });
+
+    if (validation.fails()) {
+      session.withErrors(validation.messages()).flashAll();
+      return response.redirect("back");
+    }
+
     const ups = new UPS();
 
     ups.tanggal = request.input("tanggal");
@@ -48,6 +63,7 @@ class UpController {
       session.withErrors([
         { field: "gambar", message: upload_image.error().message },
       ]);
+      return response.redirect("back");
     }
 
     await ups.save();
