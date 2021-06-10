@@ -47,23 +47,25 @@ class DvrController {
     dvr.harga = request.input("harga");
     dvr.keterangan = request.input("keterangan");
 
-    const upload_image = request.file("gambar", {
-      types: ["image"],
-      size: "2mb",
-      extnames: ["jpg", "jpeg", "png"],
-    });
-
-    dvr.gambar = new Date().getTime() + "." + upload_image.subtype;
-
-    await upload_image.move(Helpers.publicPath("uploads/image/dvr"), {
-      name: dvr.gambar,
-    });
-
-    if (!upload_image.moved()) {
-      session.withErrors([
-        { field: "gambar", message: upload_image.error().message },
-      ]);
-      return response.redirect("back");
+    if(request.file("gambar")){
+      const upload_image = request.file("gambar", {
+        types: ["image"],
+        size: "2mb",
+        extnames: ["jpg", "jpeg", "png"],
+      });
+  
+      cctv.gambar = new Date().getTime() + "." + upload_image.subtype;
+  
+      await upload_image.move(Helpers.publicPath("uploads/image/cctv"), {
+        name: cctv.gambar,
+      });
+  
+      if (!upload_image.moved()) {
+        session.withErrors([
+          { field: "gambar", message: upload_image.error().message },
+        ]);
+        return response.redirect("back");
+      }
     }
 
     await dvr.save();
