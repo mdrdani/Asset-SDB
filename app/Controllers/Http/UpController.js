@@ -54,10 +54,10 @@ class UpController {
         extnames: ["jpg", "jpeg", "png"],
       });
   
-      cctv.gambar = new Date().getTime() + "." + upload_image.subtype;
+      ups.gambar = new Date().getTime() + "." + upload_image.subtype;
   
-      await upload_image.move(Helpers.publicPath("uploads/image/cctv"), {
-        name: cctv.gambar,
+      await upload_image.move(Helpers.publicPath("uploads/image/ups"), {
+        name: ups.gambar,
       });
   
       if (!upload_image.moved()) {
