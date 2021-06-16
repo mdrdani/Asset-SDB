@@ -51,6 +51,7 @@
   $(document).ready( function () {
     $('#myTable').DataTable({
         responsive : true,
+        "order": [[ 0, "desc" ]],
         columnDefs: [
           {targets: [3], render: $.fn.dataTable.render.number('.', ',', 0 )},
           {targets: [0], render: function(data) {
